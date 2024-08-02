@@ -1,55 +1,70 @@
-// script.js
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('C:\Users\preks\OneDrive\Pictures\193-1936590_best-laptop-wallpapers-4k-ultra-hd-desktop-wallpaper.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff; /* Adjust text color for better readability */
+}
 
-// Selectors
-const navLinks = document.querySelectorAll('nav ul li a');
-const loginBtn = document.getElementById('login-btn');
-const bookAppointmentBtn = document.getElementById('book-appointment-btn');
-const loginForm = document.getElementById('login-form');
-const registerForm = document.getElementById('register-form');
-const bookAppointmentForm = document.getElementById('book-appointment-form');
+header {
+    background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
 
-// Event Listeners
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    const sectionId = link.getAttribute('href').replace('#', '');
-    const section = document.getElementById(sectionId);
-    section.scrollIntoView({ behavior: 'smooth' });
-  });
-});
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
 
-loginBtn.addEventListener('click', () => {
-  const loginSection = document.getElementById('login');
-  loginSection.classList.add('active');
-});
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
 
-bookAppointmentBtn.addEventListener('click', () => {
-  const bookAppointmentSection = document.getElementById('book-appointment');
-  bookAppointmentSection.classList.add('active');
-});
+main {
+    margin-top: 80px; /* Add margin to avoid content behind the fixed header */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background for better text visibility */
+    border-radius: 10px;
+}
 
-loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-  // TO DO: Implement login logic here
-  console.log('Login attempt with username:' &{username} ,'and password:' &{password});
-});
+h1, h2, p, form {
+    margin: 20px 0;
+}
 
-registerForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const username = document.getElementById('username').value;
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  const confirmPassword = document.getElementById('confirm-password').value;
-  // TO DO: Implement registration logic here
-  console.log('Registration attempt with username:'&{username} ,' email:' &{email} ,' password: '&{password} ,' and confirm password:' &{confirmPassword});
-});
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
 
-bookAppointmentForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const doctor = document.getElementById('doctor').value;
-  const date = document.getElementById('date').value;
-  const time = document.getElementById('time').value;
-  // TO DO: Implement book appointment logic here
-  console.log('Book appointment attempt with doctor:' &{doctor},'date:' &{date},' and time:' &{time});
-});
+input[type="submit"], button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #0056b3;
+}
